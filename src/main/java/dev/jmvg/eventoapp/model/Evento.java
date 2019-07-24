@@ -1,7 +1,27 @@
 package dev.jmvg.eventoapp.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Evento {
-    private String nome, local, data, horario;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long codigo;
+    private String nome;
+    private String local;
+    private String data;
+    private String horario;
+
+    public long getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(long codigo) {
+        this.codigo = codigo;
+    }
 
     public String getNome() {
         return nome;
